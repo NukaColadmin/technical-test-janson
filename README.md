@@ -37,7 +37,7 @@ Time to be creative, and efficient. Do what you think would be the best for your
 ## Finally
 
 Send us the project and answer to those simple questions : 
-- What bugs did you find ? How did you solve these and why ? 
+- What bugs did you find ? How did you solve these and why ?
 - Which feature did you develop and why ? 
 - Do you have any feedback about the code / architecture of the project and what was the difficulty you encountered while doing it ? 
 

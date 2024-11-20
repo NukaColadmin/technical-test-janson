@@ -1,16 +1,20 @@
 const passwordValidator = require("password-validator");
 const AWS = require("aws-sdk");
 
-function validatePassword(password) {
+const validatePassword = (password) => {
   const schema = new passwordValidator();
   schema
     .is()
-    .min(6) // Minimum length 6
-    .is()
-    .max(100); // Maximum length 100
+    .min(6) // Minimum 6 caractères
+    .has()
+    .letters() // Contient des lettres
+    .has()
+    .digits(); // Contient des chiffres
 
-  return schema.validate(password);
-}
+  if (!schema.validate(password)) {
+    return "Password must be at least 6 characters long and include letters and numbers.";
+  }
+};
 
 module.exports = {
   validatePassword,

@@ -15,7 +15,7 @@ class api {
     this.token = token;
   }
 
-  get(path) {
+  get(path) {    
     return new Promise(async (resolve, reject) => {
       try {
         const response = await fetch(`${apiURL}${path}`, {
@@ -23,7 +23,7 @@ class api {
           method: "GET",
           credentials: "include",
           headers: { "Content-Type": "application/json", Authorization: `JWT ${this.token}` },
-        });
+        });        
 
         const res = await response.json();
         resolve(res);
@@ -70,6 +70,8 @@ class api {
   }
 
   post(path, body) {
+    console.log(body, path);
+    
     return new Promise(async (resolve, reject) => {
       try {
         const response = await fetch(`${apiURL}${path}`, {
